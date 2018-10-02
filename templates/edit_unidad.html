@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=es" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <strong><a class="nav-link" href="../index.html"> Libro Web de Recetas <span class="sr-only">(current)</span></a></strong>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="recetas.html"> Recetas <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="unidades.html"> Unidades <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ingredientes.html"> Ingredientes <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tipos.html"> Tipos de Receta <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="alert alert-warning message-duplicate" style="display:none">
+          <strong>Atención!</strong> Ya tenemos una receta con ese nombre, revisala!.
+        </div>
+        <div id="main" class="ppal">
+            <div class="alert alert-danger" v-if="validate">
+              Por favor llena todos los campos
+            </div>
+            <span class="title"> Editar Unidad</span>
+            <br><br>
+            <div class="receta-form">
+              <div class="form-group ">
+                <label for="InputNombre">Nombre <span style="color:RED" v-if="!unidadrequest.Nombre">*Requerido</span></label>
+                <input type="text" class="form-control" id="InputNombre" placeholder="Ingrese el nombre de la Unidad"
+                v-model="unidadrequest.Nombre">
+              </div>
+              <div class="form-group ">
+                <label for="InputDesripcion">Abreviacion<span style="color:RED" v-if="!unidadrequest.Abrev">*Requerido</span></label>
+                <input v-model="unidadrequest.Abrev" class="form-control" id="InputDesripcion" placeholder="Nombre corto">
+              </div>
+              <br>
+              <button class="btn btn-primary" @click="ActualizarUnidad">
+                Guardar
+              </button>
+              <a href="unidades.html" class="btn btn-danger" role="button">Cancelar</a>
+            </div>
+          </div>
+        <!-- Download vue -->
+        <script src="../js/vue.js"></script>
+        <!-- Axios for API-Rest -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <!-- VUE scripts -->
+        <script src="../js/edit_unidad.js"></script>
+    </body>
+    
+</html>
