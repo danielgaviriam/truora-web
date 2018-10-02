@@ -14,4 +14,9 @@ new Vue({
         .get("https://truora-rest-daniel-gaviria.c9users.io/tipos/")
         .then(response => (this.lists = response.data))
     },
+    methods:{
+        verReceta(id){
+            window.location.replace("templates/tipos-agrupados.html?id="+id) 
+        },
+    },
 });

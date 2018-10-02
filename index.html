@@ -39,12 +39,12 @@
           <center><img src="https://image.flaticon.com/icons/svg/45/45605.svg" width="200px"><br></img>
           <span class="title">Libro Web de Recetas</span><br><br></center>
             <span class="description">En nuestra plataforma encontraras algunas de las mejores recetas, Puedes ayudar a editarlas, borrarlas (sino te gustan), agregar nuevas y consultarlas</span><br><br>
-            <!--
+            
             <span class="description">Nuestras recetas, estan agrupadas por categoria, selecciona una:</span>
             <br>
             <center>
-            <a style="margin:10px" v-for="list in lists" type="button" class="btn btn-outline-info">{{ list.Nombre }}</a>
-            </center>-->
+            <a v-for="list in lists"  @click="verReceta(list.ID)" style="margin:10px" type="button" class="btn btn-outline-info">{{ list.Nombre }}</a>
+            </center>
             <span class="description">Aqui encontraras todas nuestras recetas</span>
             <br>
             <center>

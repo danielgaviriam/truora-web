@@ -8,12 +8,17 @@ new Vue({
     el:'#main',
     data : {
         lists: [],
+        tipo: null,
     },
     created(){
         
         var url_string = window.location.href
         var url = new URL(url_string);
         var id = url.searchParams.get("id");
+        
+        axios
+        .get("https://truora-rest-daniel-gaviria.c9users.io/tipos/"+id)
+        .then(response => (this.tipo = response.data))
         
         axios
         .get("https://truora-rest-daniel-gaviria.c9users.io/tipos-agrupados/"+id)

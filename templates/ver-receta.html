@@ -42,9 +42,10 @@
           <center><span class="title2">Ingredientes</span><br><br></center></center>
           <ul>
             <li v-for="item in lists.RecetaIngrediente">
-              {{item.Ingrediente.Nombre}}
+              {{item.Ingrediente.Nombre}} - {{item.Cantidad}} {{item.Ingrediente.Unidade.Abrev}}
             </li>
           </ul>
+          <center><a href="recetas.html" class="btn btn-info" role="button">Volver</a></center>
         </div>
         
         <!-- Download vue -->
